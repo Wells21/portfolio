@@ -1,0 +1,827 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>cyclistic bike share</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/cyclistic_bike_share/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/cyclistic_bike_share/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u805" class="ax_default paragraph ax_default_unplaced" style="display:none; visibility: hidden">
+        <div id="u805_div" class=""></div>
+        <div id="u805_text" class="text ">
+          <p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;">In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime.</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;">Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes, and annual memberships. </span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;">Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.</span></p><p style="font-size:42px;"><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;">Data Sources</span></p><p style="font-size:22px;"><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p style="font-size:42px;"><a id="u806" class="link"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#0000FF;">https://divvy-tripdata.s3.amazonaws.com/index.html</span></a></p><p style="font-size:22px;"><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p style="font-size:22px;"><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;">Thought Process - </span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;">- </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">Understanding the problem</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;">&nbsp;&nbsp;&nbsp; To design marketing strategies aimed at converting casual riders into annual members. In order to do that, however, we need to better understand how annual members and casual riders differ, why casual riders would buy a membership. We are interested in analyzing the Cyclistic historical bike trip data to identify trends and patterns.</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;">- </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">Understanding the DATA</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">&nbsp;&nbsp;&nbsp; </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">The data contains informations on the type of plan a rider is using, the type of bikes, and many more informations. This gives us a direction in order to understand how the casual riders and annual memebers differs.</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u807" class="ax_default shape">
+        <div id="u807_div" class=""></div>
+        <div id="u807_text" class="text ">
+          <p><span>Cyclistic Bike Share Analysis</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u808" class="ax_default shape">
+        <div id="u808_div" class=""></div>
+        <div id="u808_text" class="text ">
+          <p><span>Cyclistic Company</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u809" class="ax_default shape">
+        <div id="u809_div" class=""></div>
+        <div id="u809_text" class="text ">
+          <p><span>Tools used -</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u810" class="ax_default image">
+        <img id="u810_img" class="img " src="images/sentiment_analysis/u375.png"/>
+        <div id="u810_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u811" class="ax_default image">
+        <img id="u811_img" class="img " src="images/sentiment_analysis/u380.png"/>
+        <div id="u811_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u812" class="ax_default image">
+        <img id="u812_img" class="img " src="images/sentiment_analysis/u378.png"/>
+        <div id="u812_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u813" class="ax_default paragraph">
+        <div id="u813_div" class=""></div>
+        <div id="u813_text" class="text ">
+          <p><span style="font-family:'Arial', sans-serif;font-weight:400;">In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime.</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;">Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes, and annual memberships. </span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;">Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.</span></p><p><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;"><br></span></p><p><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;">Data Sources</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p><a id="u814" class="link"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#0000FF;">https://divvy-tripdata.s3.amazonaws.com/index.html</span></a></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;">Thought Process - </span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;">- </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">Understanding the problem</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;">&nbsp;&nbsp;&nbsp; To design marketing strategies aimed at converting casual riders into annual members. In order to do that, however, we need to better understand how annual members and casual riders differ, why casual riders would buy a membership. We are interested in analyzing the Cyclistic historical bike trip data to identify trends and patterns.</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;">- </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">Understanding the DATA</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">&nbsp;&nbsp;&nbsp; </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">The data contains informations on the type of plan a rider is using, the type of bikes, and many more informations. This gives us a direction in order to understand how the casual riders and annual memebers differs.</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u815" class="ax_default image">
+        <img id="u815_img" class="img " src="images/cyclistic_bike_share/u815.png"/>
+        <div id="u815_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u816" class="ax_default image">
+        <img id="u816_img" class="img " src="images/cyclistic_bike_share/u816.png"/>
+        <div id="u816_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u817" class="ax_default image">
+        <img id="u817_img" class="img " src="images/dashboards/cyclist_u624.png"/>
+        <div id="u817_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u818" class="ax_default image">
+        <img id="u818_img" class="img " src="images/cyclistic_bike_share/u818.png"/>
+        <div id="u818_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u819" class="ax_default primary_button">
+        <div id="u819_div" class=""></div>
+        <div id="u819_text" class="text ">
+          <p><span>View Report</span></p>
+        </div>
+      </div>
+
+      <!-- Footer (Group) -->
+      <div id="u820" class="ax_default" data-label="Footer" data-left="0" data-top="5176" data-width="1440" data-height="242">
+
+        <!-- Rectangle 6 (Rectangle) -->
+        <div id="u821" class="ax_default shape" data-label="Rectangle 6">
+          <div id="u821_div" class=""></div>
+          <div id="u821_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u822" class="ax_default shape">
+          <div id="u822_div" class=""></div>
+          <div id="u822_text" class="text ">
+            <p><span>Social Links -</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u823" class="ax_default shape">
+          <div id="u823_div" class=""></div>
+          <div id="u823_text" class="text ">
+            <p><span>Navigation -</span></p>
+          </div>
+        </div>
+
+        <!-- Twitter (Group) -->
+        <div id="u824" class="ax_default" data-label="Twitter" data-left="737" data-top="5273" data-width="95" data-height="36">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u825" class="ax_default shape">
+            <div id="u825_div" class=""></div>
+            <div id="u825_text" class="text ">
+              <p><span>Github</span></p>
+            </div>
+          </div>
+
+          <!-- github (Image) -->
+          <div id="u826" class="ax_default image" data-label="github">
+            <img id="u826_img" class="img " src="images/index/github_u43.png"/>
+            <div id="u826_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u827" class="ax_default shape">
+          <div id="u827_div" class=""></div>
+          <div id="u827_text" class="text ">
+            <p><span>Project cases</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u828" class="ax_default shape">
+          <div id="u828_div" class=""></div>
+          <div id="u828_text" class="text ">
+            <p><span>Thought Process</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u829" class="ax_default shape">
+          <div id="u829_div" class=""></div>
+          <div id="u829_text" class="text ">
+            <p><span>About Me</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u830" class="ax_default shape">
+          <div id="u830_div" class=""></div>
+          <div id="u830_text" class="text ">
+            <p><span>Contact Me -</span></p>
+          </div>
+        </div>
+
+        <!-- Behance (Group) -->
+        <div id="u831" class="ax_default" data-label="Behance" data-left="0" data-top="0" data-width="0" data-height="0">
+        </div>
+
+        <!-- LinkedIn (Group) -->
+        <div id="u832" class="ax_default" data-label="LinkedIn" data-left="739" data-top="5346" data-width="97" data-height="25">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u833" class="ax_default shape">
+            <div id="u833_div" class=""></div>
+            <div id="u833_text" class="text ">
+              <p><span>LinkedIn</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u834" class="ax_default shape">
+            <div id="u834_div" class=""></div>
+            <div id="u834_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u835" class="ax_default shape">
+          <div id="u835_div" class=""></div>
+          <div id="u835_text" class="text ">
+            <p><span>Contact Me</span></p>
+          </div>
+        </div>
+
+        <!-- Ellipse 2 (Shape) -->
+        <div id="u836" class="ax_default shape" data-label="Ellipse 2">
+          <img id="u836_img" class="img " src="images/index/ellipse_2_u53.svg"/>
+          <div id="u836_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u837" class="ax_default shape">
+          <div id="u837_div" class=""></div>
+          <div id="u837_text" class="text ">
+            <p><span>You can contact me through any of the links here. Make yourself at home&nbsp; </span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u838" class="ax_default shape">
+          <div id="u838_div" class=""></div>
+          <div id="u838_text" class="text ">
+            <p><span>😉</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Image) -->
+        <div id="u839" class="ax_default image">
+          <img id="u839_img" class="img " src="images/index/u56.svg"/>
+          <div id="u839_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TapToTop (Group) -->
+      <div id="u840" class="ax_default" data-label="TapToTop" data-left="1239" data-top="4939" data-width="68" data-height="133">
+
+        <!-- Slide Down (Group) -->
+        <div id="u841" class="ax_default" data-label="Slide Down" data-left="1253" data-top="4970" data-width="44" data-height="102">
+
+          <!-- Unnamed (Shape) -->
+          <div id="u842" class="ax_default shape">
+            <img id="u842_img" class="img " src="images/index/u60.svg"/>
+            <div id="u842_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Shape) -->
+          <div id="u843" class="ax_default shape">
+            <img id="u843_img" class="img " src="images/index/u61.svg"/>
+            <div id="u843_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u844" class="ax_default shape">
+          <div id="u844_div" class=""></div>
+          <div id="u844_text" class="text ">
+            <p><span>Tap to top</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 (Rectangle) -->
+      <div id="u845" class="ax_default box_1 ax_default_hidden" data-label="3" style="display:none; visibility: hidden">
+        <div id="u845_div" class=""></div>
+        <div id="u845_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Header (Group) -->
+      <div id="u846" class="ax_default ax_default_unplaced" data-label="Header" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u847" class="ax_default box_1 ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u847_div" class=""></div>
+          <div id="u847_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Text Field) -->
+        <div id="u848" class="ax_default text_field ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u848_div" class=""></div>
+          <input id="u848_input" type="text" value="Portfolio" class="u848_input"/>
+        </div>
+
+        <!-- Unnamed (Shape) -->
+        <div id="u849" class="ax_default primary_button ax_default_unplaced" style="display:none; visibility: hidden">
+          <img id="u849_img" class="img " src="resources/images/transparent.gif"/>
+          <div id="u849_text" class="text ">
+            <p><span>Download CV</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u850" class="ax_default primary_button ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u850_div" class=""></div>
+          <div id="u850_text" class="text ">
+            <p><span>About Me</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u851" class="ax_default primary_button ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u851_div" class=""></div>
+          <div id="u851_text" class="text ">
+            <p><span>Home</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Group) -->
+        <div id="u852" class="ax_default ax_default_unplaced" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u853" class="ax_default primary_button ax_default_unplaced" style="display:none; visibility: hidden">
+            <div id="u853_div" class=""></div>
+            <div id="u853_text" class="text ">
+              <p><span>Contact me</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Image) -->
+          <div id="u854" class="ax_default image ax_default_unplaced" style="display:none; visibility: hidden">
+            <img id="u854_img" class="img " src="resources/images/transparent.gif"/>
+            <div id="u854_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer (Group) -->
+      <div id="u855" class="ax_default ax_default_unplaced" data-label="Footer" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
+
+        <!-- Rectangle 6 (Rectangle) -->
+        <div id="u856" class="ax_default shape ax_default_unplaced" data-label="Rectangle 6" style="display:none; visibility: hidden">
+          <div id="u856_div" class=""></div>
+          <div id="u856_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u857" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u857_div" class=""></div>
+          <div id="u857_text" class="text ">
+            <p><span>Social Links -</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u858" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u858_div" class=""></div>
+          <div id="u858_text" class="text ">
+            <p><span>Navigation -</span></p>
+          </div>
+        </div>
+
+        <!-- Twitter (Group) -->
+        <div id="u859" class="ax_default ax_default_unplaced" data-label="Twitter" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u860" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+            <div id="u860_div" class=""></div>
+            <div id="u860_text" class="text ">
+              <p><span>Github</span></p>
+            </div>
+          </div>
+
+          <!-- github (Image) -->
+          <div id="u861" class="ax_default image ax_default_unplaced" data-label="github" style="display:none; visibility: hidden">
+            <img id="u861_img" class="img " src="resources/images/transparent.gif"/>
+            <div id="u861_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u862" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u862_div" class=""></div>
+          <div id="u862_text" class="text ">
+            <p><span>Project cases</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u863" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u863_div" class=""></div>
+          <div id="u863_text" class="text ">
+            <p><span>Thought Process</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u864" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u864_div" class=""></div>
+          <div id="u864_text" class="text ">
+            <p><span>About Me</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u865" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u865_div" class=""></div>
+          <div id="u865_text" class="text ">
+            <p><span>Contact Me -</span></p>
+          </div>
+        </div>
+
+        <!-- Behance (Group) -->
+        <div id="u866" class="ax_default ax_default_unplaced" data-label="Behance" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
+        </div>
+
+        <!-- LinkedIn (Group) -->
+        <div id="u867" class="ax_default ax_default_unplaced" data-label="LinkedIn" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u868" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+            <div id="u868_div" class=""></div>
+            <div id="u868_text" class="text ">
+              <p><span>LinkedIn</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u869" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+            <div id="u869_div" class=""></div>
+            <div id="u869_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u870" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u870_div" class=""></div>
+          <div id="u870_text" class="text ">
+            <p><span>Contact Me</span></p>
+          </div>
+        </div>
+
+        <!-- Ellipse 2 (Shape) -->
+        <div id="u871" class="ax_default shape ax_default_unplaced" data-label="Ellipse 2" style="display:none; visibility: hidden">
+          <img id="u871_img" class="img " src="resources/images/transparent.gif"/>
+          <div id="u871_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u872" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u872_div" class=""></div>
+          <div id="u872_text" class="text ">
+            <p><span>You can contact me through any of the links here. Make yourself at home&nbsp; </span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u873" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+          <div id="u873_div" class=""></div>
+          <div id="u873_text" class="text ">
+            <p><span>😉</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Image) -->
+        <div id="u874" class="ax_default image ax_default_unplaced" style="display:none; visibility: hidden">
+          <img id="u874_img" class="img " src="resources/images/transparent.gif"/>
+          <div id="u874_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Text Field) -->
+      <div id="u875" class="ax_default text_field ax_default_unplaced" style="display:none; visibility: hidden">
+        <div id="u875_div" class=""></div>
+        <input id="u875_input" type="text" value="Portfolio" class="u875_input"/>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u876" class="ax_default image ax_default_unplaced" style="display:none; visibility: hidden">
+        <img id="u876_img" class="img " src="resources/images/transparent.gif"/>
+        <div id="u876_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u877" class="ax_default image ax_default_unplaced" style="display:none; visibility: hidden">
+        <img id="u877_img" class="img " src="resources/images/transparent.gif"/>
+        <div id="u877_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u878" class="ax_default image ax_default_unplaced" style="display:none; visibility: hidden">
+        <img id="u878_img" class="img " src="resources/images/transparent.gif"/>
+        <div id="u878_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u879" class="ax_default image ax_default_unplaced" style="display:none; visibility: hidden">
+        <img id="u879_img" class="img " src="resources/images/transparent.gif"/>
+        <div id="u879_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u880" class="ax_default paragraph">
+        <div id="u880_div" class=""></div>
+        <div id="u880_text" class="text ">
+          <p><span>- </span><span style="color:#F59A23;">Data Processing</span></p><p><span style="color:#F59A23;"><br></span></p><p><span style="color:#F59A23;">&nbsp;&nbsp;&nbsp; </span><span style="color:#000000;">Processing Data is important for an accurate analysis. It involves a lot of processes, like, cleaning, formatting, feature engineering, and much more. </span></p><p><span style="color:#000000;"><br></span></p><p><span style="color:#000000;">During the </span><span style="color:#BFBF00;">processing </span><span style="color:#000000;">phase of the project, we performed feature engineering, generating different decision variables like day_of_week, the total ride in seconds and many more. We also performed </span><span style="color:#BFBF00;">data cleaning, </span><span style="color:#000000;">removing unwanted columns, handling missing values. correcting incorrect formatting. </span></p><p><span style="color:#000000;"><br></span></p><p><span style="color:#000000;">All of this are neccesary for an accurate insights, free from outliers, errors and hence reducing wrong decisions made by the company.</span></p><p><span style="color:#000000;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u881" class="ax_default paragraph">
+        <div id="u881_div" class=""></div>
+        <div id="u881_text" class="text ">
+          <p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">To view the Data processing processes, </span><a id="u882" class="link"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#0000FF;">check this out</span></a></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;">- </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">Data Visualization</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">&nbsp;&nbsp;&nbsp; </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">After been done performing many data preprocessing processes, we have prepared the data for analysis and generating insights and recomendations as a report. </span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">Now comes in the visualizations. Using </span><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;color:#000000;">PowerBI</span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">, we were able to generate visualizations, which clearly and concisely presents the analysis gotten from the data.</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u883" class="ax_default paragraph">
+        <div id="u883_div" class=""></div>
+        <div id="u883_text" class="text ">
+          <p><span style="color:#000000;">Here is the snapshot of the report from the analysis made.</span></p><p><span style="color:#000000;"><br></span></p><p><span style="color:#000000;">To view the full report clearer, </span><a id="u884" class="link"><span style="color:#0000FF;">click here</span></a></p><p><span style="color:#000000;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u885" class="ax_default paragraph">
+        <div id="u885_div" class=""></div>
+        <div id="u885_text" class="text ">
+          <p><span style="font-family:'Arial', sans-serif;font-weight:400;">- </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">Insights and Recomendation</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&nbsp;&nbsp;&nbsp; </span><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;color:#000000;">Insights</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; Customers in the casual membership plan had longer trips than the member's plan</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">.</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; Sunday made up 12.17% Sum of ride lengths.</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; Sum of ride lengths for casuals and members diverged the most when the day of the week</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">was Sunday when casuals were 47,353,081 higher than members.</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; Both member's plan and casual plan used the electric and classic bikes, but there was no</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">record of docked bikes being used in the member's plan.</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;color:#000000;">&nbsp;&nbsp;&nbsp; Recommendations</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; From the insights drawn regarding the analysis, in order to attract customers from the</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">casual plan to the members plan, I recommend that the Company makes provisions for</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">docked bikes in the members plan.</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; Any campaign been held should likely fall on Sundays in other to reach out to more casual</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">members, because they mostly ride on Sundays. This helps in tightening the scope to a</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">particular audience.</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u886" class="ax_default paragraph ax_default_unplaced" style="display:none; visibility: hidden">
+        <div id="u886_div" class=""></div>
+        <div id="u886_text" class="text ">
+          <p><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;">- </span><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#F59A23;">Data Processing</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#F59A23;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#F59A23;">&nbsp;&nbsp;&nbsp; </span><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#000000;">Processing Data is important for an accurate analysis. It involves a lot of processes, like, cleaning, formatting, feature engineering, and much more. </span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#000000;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#000000;">During the </span><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#BFBF00;">processing </span><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#000000;">phase of the project, we performed feature engineering, generating different decision variables like day_of_week, the total ride in seconds and many more. We also performed </span><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#BFBF00;">data cleaning, </span><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#000000;">removing unwanted columns, handling missing values. correcting incorrect formatting. </span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#000000;"><br></span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#000000;">All of this are neccesary for an accurate insights, free from outliers, errors and hence reducing wrong decisions made by the company.</span></p><p><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#000000;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u887" class="ax_default paragraph ax_default_unplaced" style="display:none; visibility: hidden">
+        <div id="u887_div" class=""></div>
+        <div id="u887_text" class="text ">
+          <p style="font-size:22px;"><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#000000;">To view the Data processing processes,</span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"> </span><a id="u888" class="link"><span style="font-family:'Arial', sans-serif;font-weight:400;font-size:42px;color:#0000FF;">check this out</span></a></p><p style="font-size:22px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;">- </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">Data Visualization</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">&nbsp;&nbsp;&nbsp; </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">After been done performing many data preprocessing processes, we have prepared the data for analysis and generating insights and recomendations as a report. </span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">Now comes in the visualizations. Using </span><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;color:#000000;">PowerBI</span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">, we were able to generate visualizations, which clearly and concisely presents the analysis gotten from the data.</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u889" class="ax_default paragraph ax_default_unplaced" style="display:none; visibility: hidden">
+        <div id="u889_div" class=""></div>
+        <div id="u889_text" class="text ">
+          <p style="font-size:42px;"><span style="color:#000000;">Here is the snapshot of the report from the analysis made.</span></p><p style="font-size:42px;"><span style="color:#000000;"><br></span></p><p style="font-size:22px;"><span style="font-size:42px;color:#000000;">To view the full report clearer,</span><span style="color:#000000;"> </span><a id="u890" class="link"><span style="font-size:42px;color:#0000FF;">click here</span></a></p><p style="font-size:42px;"><span style="color:#000000;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u891" class="ax_default paragraph ax_default_unplaced" style="display:none; visibility: hidden">
+        <div id="u891_div" class=""></div>
+        <div id="u891_text" class="text ">
+          <p style="font-size:22px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;">- </span><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;">Insights and Recomendation</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#F59A23;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&nbsp;&nbsp;&nbsp; </span><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;color:#000000;">Insights</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; Customers in the casual membership plan had longer trips than the member's plan</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">.</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; Sunday made up 12.17% Sum of ride lengths.</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; Sum of ride lengths for casuals and members diverged the most when the day of the week</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">was Sunday when casuals were 47,353,081 higher than members.</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; Both member's plan and casual plan used the electric and classic bikes, but there was no</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">record of docked bikes being used in the member's plan.</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial Bold', 'Arial', sans-serif;font-weight:700;color:#000000;">&nbsp;&nbsp;&nbsp; Recommendations</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; From the insights drawn regarding the analysis, in order to attract customers from the</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">casual plan to the members plan, I recommend that the Company makes provisions for</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">docked bikes in the members plan.</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;"><br></span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">&#149; Any campaign been held should likely fall on Sundays in other to reach out to more casual</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">members, because they mostly ride on Sundays. This helps in tightening the scope to a</span></p><p style="font-size:42px;"><span style="font-family:'Arial', sans-serif;font-weight:400;color:#000000;">particular audience.</span></p>
+        </div>
+      </div>
+
+      <!-- Header (Group) -->
+      <div id="u892" class="ax_default" data-label="Header" data-left="0" data-top="0" data-width="1440" data-height="71">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u893" class="ax_default box_1">
+          <div id="u893_div" class=""></div>
+          <div id="u893_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Text Field) -->
+        <div id="u894" class="ax_default text_field">
+          <div id="u894_div" class=""></div>
+          <input id="u894_input" type="text" value="Portfolio" class="u894_input"/>
+        </div>
+
+        <!-- Unnamed (Shape) -->
+        <div id="u895" class="ax_default primary_button">
+          <img id="u895_img" class="img " src="images/index/u92.svg"/>
+          <div id="u895_text" class="text ">
+            <p><span>Download CV</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u896" class="ax_default primary_button">
+          <div id="u896_div" class=""></div>
+          <div id="u896_text" class="text ">
+            <p><span>About Me</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u897" class="ax_default primary_button">
+          <div id="u897_div" class=""></div>
+          <div id="u897_text" class="text ">
+            <p><span>Home</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Group) -->
+        <div id="u898" class="ax_default" data-left="1197.60769515459" data-top="13.4115427318801" data-width="150.392304845413" data-height="43.1769145362398">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u899" class="ax_default primary_button">
+            <div id="u899_div" class=""></div>
+            <div id="u899_text" class="text ">
+              <p><span>Contact me</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Image) -->
+          <div id="u900" class="ax_default image">
+            <img id="u900_img" class="img " src="images/index/u97.png"/>
+            <div id="u900_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- mobile menu together (Group) -->
+      <div id="u901" class="ax_default ax_default_unplaced" data-label="mobile menu together" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
+
+        <!-- mobile menu (Group) -->
+        <div id="u902" class="ax_default ax_default_unplaced" data-label="mobile menu" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
+
+          <!-- Unnamed (Speech Bubble) -->
+          <div id="u903" class="ax_default shape ax_default_unplaced" style="display:none; visibility: hidden">
+            <img id="u903_img" class="img " src="resources/images/transparent.gif"/>
+            <div id="u903_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Text Field) -->
+          <div id="u904" class="ax_default text_field ax_default_unplaced" style="display:none; visibility: hidden">
+            <div id="u904_div" class=""></div>
+            <input id="u904_input" type="text" value="Home" class="u904_input"/>
+          </div>
+
+          <!-- Unnamed (Text Field) -->
+          <div id="u905" class="ax_default text_field ax_default_unplaced" style="display:none; visibility: hidden">
+            <div id="u905_div" class=""></div>
+            <input id="u905_input" type="text" value="About Me" class="u905_input"/>
+          </div>
+
+          <!-- Unnamed (Text Field) -->
+          <div id="u906" class="ax_default text_field ax_default_unplaced" style="display:none; visibility: hidden">
+            <div id="u906_div" class=""></div>
+            <input id="u906_input" type="text" value="Download CV" class="u906_input"/>
+          </div>
+
+          <!-- Unnamed (Text Field) -->
+          <div id="u907" class="ax_default text_field ax_default_unplaced" style="display:none; visibility: hidden">
+            <div id="u907_div" class=""></div>
+            <input id="u907_input" type="text" value="Contact Me" class="u907_input"/>
+          </div>
+        </div>
+
+        <!-- Bars (Group) -->
+        <div id="u908" class="ax_default ax_default_unplaced" data-label="Bars" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
+
+          <!-- Unnamed (Shape) -->
+          <div id="u909" class="ax_default icon ax_default_unplaced" style="display:none; visibility: hidden">
+            <img id="u909_img" class="img " src="resources/images/transparent.gif"/>
+            <div id="u909_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Shape) -->
+          <div id="u910" class="ax_default icon ax_default_unplaced" style="display:none; visibility: hidden">
+            <img id="u910_img" class="img " src="resources/images/transparent.gif"/>
+            <div id="u910_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Shape) -->
+          <div id="u911" class="ax_default icon ax_default_unplaced" style="display:none; visibility: hidden">
+            <img id="u911_img" class="img " src="resources/images/transparent.gif"/>
+            <div id="u911_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u912" class="ax_default" data-left="148" data-top="123" data-width="420" data-height="23">
+
+        <!-- Unnamed (Group) -->
+        <div id="u913" class="ax_default" data-left="148" data-top="123" data-width="237" data-height="23">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u914" class="ax_default paragraph">
+            <div id="u914_div" class=""></div>
+            <div id="u914_text" class="text ">
+              <p><span>Home</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Right Arrow) -->
+          <div id="u915" class="ax_default shape">
+            <img id="u915_img" class="img " src="images/sql/u146.svg"/>
+            <div id="u915_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u916" class="ax_default paragraph">
+            <div id="u916_div" class=""></div>
+            <div id="u916_text" class="text ">
+              <p><span>Data Analysis</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unnamed (Right Arrow) -->
+        <div id="u917" class="ax_default shape">
+          <img id="u917_img" class="img " src="images/sql/u146.svg"/>
+          <div id="u917_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u918" class="ax_default paragraph">
+          <div id="u918_div" class=""></div>
+          <div id="u918_text" class="text ">
+            <p><span>Cyclistic Bike</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>
