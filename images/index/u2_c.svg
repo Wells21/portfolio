@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="322px" height="452px" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter x="609px" y="71px" width="322px" height="452px" filterUnits="userSpaceOnUse" id="filter73">
+      <feOffset dx="5" dy="5" in="SourceAlpha" result="shadowOffsetInner" />
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetInner" result="shadowGaussian" />
+      <feComposite in2="shadowGaussian" operator="atop" in="SourceAlpha" result="shadowComposite" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.474509803921569  0 0 0 0 0.474509803921569  0 0 0 0 0.474509803921569  0 0 0 1 0  " in="shadowComposite" />
+    </filter>
+    <g id="widget74">
+      <path d="M 611.5 377.9  C 611.5 377.9  611.5 73.5  611.5 73.5  C 611.5 73.5  918.5 73.5  918.5 73.5  C 918.5 73.5  918.5 377.9  918.5 377.9  C 918.5 377.9  825.970134864218 377.9  825.970134864218 377.9  C 825.970134864218 377.9  749.4 508.069229269171  749.4 508.069229269171  C 749.4 508.069229269171  672.829865135781 377.9  672.829865135781 377.9  C 672.829865135781 377.9  611.5 377.9  611.5 377.9  Z " fill-rule="nonzero" fill="#ffffff" stroke="none" />
+      <path d="M 609 380.4  C 609 380.4  609 71  609 71  C 609 71  921 71  921 71  C 921 71  921 380.4  921 380.4  C 921 380.4  827.4 380.4  827.4 380.4  C 827.4 380.4  749.4 513  749.4 513  C 749.4 513  671.4 380.4  671.4 380.4  C 671.4 380.4  609 380.4  609 380.4  Z M 612 377.4  C 612 377.4  673.115838162938 377.4  673.115838162938 377.4  C 673.115838162938 377.4  749.4 507.083075123005  749.4 507.083075123005  C 749.4 507.083075123005  825.684161837062 377.4  825.684161837062 377.4  C 825.684161837062 377.4  918 377.4  918 377.4  C 918 377.4  918 74  918 74  C 918 74  612 74  612 74  C 612 74  612 377.4  612 377.4  Z " fill-rule="nonzero" fill="#f59a23" stroke="none" />
+    </g>
+  </defs>
+  <g transform="matrix(1 0 0 1 -609 -71 )">
+    <use xlink:href="#widget74" filter="url(#filter73)" />
+    <use xlink:href="#widget74" />
+  </g>
+</svg>
